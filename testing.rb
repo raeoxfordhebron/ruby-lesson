@@ -78,3 +78,21 @@ myFunc {|x| puts x}
 myLambda = -> (x){x+2} # can only do one expression here
 
 puts myLambda.call(5) # call the function above after the arrow, 5 is the argument passing into the function
+
+# PROC
+myProc = Proc.new{|x| x + 2} # same thing as above, just different under the hood
+
+puts myProc.call(5)
+
+def theFunc
+    myLambda = -> (x){return x+2} # gets it's own execution context 
+    myProc = Proc.new{|x| return x + 2} # returning here is the same as returning in theFunc, stops the function
+    puts "before lambda"
+    myLambda.call(5)
+    puts "after lambda"
+    myProc.call(5)
+    puts "after proc"
+end
+
+theFunc
+
