@@ -12,8 +12,19 @@ puts(myint, mystr, myfloat, mybool)
 myvar = 5 > 6 # expression
 puts(myvar)
 
-if myvar
-    puts('This is true')
-else
+unless myvar
     puts('This is false')
+else
+    puts('This is true')
+end
+
+# Loops
+count = 0
+while true do
+    puts('Hello')
+    if count == 10
+        break
+    else
+        count += 1
+    end
 end
