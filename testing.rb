@@ -52,8 +52,13 @@ end
 
 HelloWorld()
 
-def GoodbyeWorld (x = 'Hello', y = 'World')
-    return "#{x} #{y}"
+def GoodbyeWorld (*args) # all arguments will go into an array - args
+    return args
 end
 
-puts(GoodbyeWorld())
+puts(GoodbyeWorld('Goodbye', 'Rae'))
+
+# Hashes (Objects in Javascript, Dictionary in Python)
+my_hash = {"Name" => "Rae Hebron", "Age" => 28}
+puts(my_hash["Name"])
+puts(my_hash["Age"])
