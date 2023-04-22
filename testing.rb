@@ -28,3 +28,10 @@ while true do
         count += 1
     end
 end
+
+my_arr = [1,2,3,4,5,6,7]
+puts(my_arr[3])
+
+for num in my_arr do
+    puts(num)
+end
