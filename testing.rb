@@ -109,16 +109,20 @@ puts anotherFunc.eval('hello')
 ## OOP Masterclass
 
 class Dog
-    @@totalDogs = 0
+    @@totalDogs = 0 # class variable
+    puts "this runs" 
     def initialize(name)
-        @name = name
+        @name = name # instance variable
         @legs = 4
         @ears = 2
         @tail = true
         @@totalDogs += 1
     end
-    def Dog.total
+    def Dog.total # class function
         @@totalDogs
+    end
+    def Dog.stuff(myarg)
+        puts myarg
     end
     def legs
         return @legs
@@ -132,10 +136,15 @@ class Dog
     def setName(name)
         @name = name
     end
+    stuff :athing # treats this like a string
+end
+
+class SmallDog < Dog
+    stuff :athing
 end
 
 Spot = Dog.new("Spot")
-Fluffy = Dog.new("Fluffy")
+Fluffy = SmallDog.new("Fluffy")
 Fluffy.setLegs(3)
 
 puts Spot.legs
@@ -143,3 +152,87 @@ puts Fluffy.legs
 puts Spot.name
 puts Fluffy.name
 puts Dog.total
+
+## OOP Masterclass II
+
+class Person 
+    def initialize name, age = 0
+        @name = name
+        @age = age
+    end
+
+    def birthday
+        @age += 1
+    end
+    
+    def speak
+        puts "say words"
+    end
+
+    def haveChild name
+        return Baby.new(name)
+    end
+    attr_accessor :name, :age
+end
+
+
+class Baby < Person 
+    def initialize name
+        super
+    end
+
+    def birthday
+        @age += 1
+        if(@age >= 18)
+            return Person.new(@name, @age)
+        end
+    end
+
+    def speak
+        puts "waaah"
+    end
+end
+
+Bob = Person.new("Bob", 30)
+
+Stewie = Bob.haveChild("Stewie")
+
+puts Stewie.age
+
+puts Stewie.birthday
+puts Stewie.age
+puts Stewie.birthday
+puts Stewie.age
+puts Stewie.birthday
+puts Stewie.age
+puts Stewie.birthday
+puts Stewie.age
+puts Stewie.birthday
+puts Stewie.age
+puts Stewie.birthday
+puts Stewie.age
+puts Stewie.birthday
+puts Stewie.age
+puts Stewie.birthday
+puts Stewie.age
+puts Stewie.birthday
+puts Stewie.age
+puts Stewie.birthday
+puts Stewie.age
+puts Stewie.birthday
+puts Stewie.age
+puts Stewie.birthday
+puts Stewie.age
+puts Stewie.birthday
+puts Stewie.age
+puts Stewie.birthday
+puts Stewie.age
+puts Stewie.birthday
+puts Stewie.age
+puts Stewie.birthday
+puts Stewie.age
+puts Stewie.birthday
+puts Stewie.age
+puts Stewie.birthday
+puts Stewie.age
+
