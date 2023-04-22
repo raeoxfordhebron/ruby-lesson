@@ -285,7 +285,7 @@ end
 puts AlexMerced.age
 puts AlexMerced.name
 
-## Composition / Modules
+## Composition - using modules
 
 module People
     def speak
@@ -318,5 +318,9 @@ include People
 end
 
 Mary = Person.new("Mary", 30)
+Mary.speak
 puts Mary.age
 puts Mary.name
+
+Lizzie = Baby.new("Lizzie", 0)
+Lizzie.speak
