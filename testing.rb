@@ -191,6 +191,10 @@ class Baby < Person
     def speak
         puts "waaah"
     end
+
+    def haveChild
+        puts "can't do that"
+        end
 end
 
 Bob = Person.new("Bob", 30)
@@ -236,3 +240,47 @@ puts Stewie.age
 puts Stewie.birthday
 puts Stewie.age
 
+
+# Factory Pattern - one class creates instances of another class
+
+class Car 
+
+end
+
+class Factory
+
+    def initialize name
+        @name = name
+        @carsmade = []
+    end
+
+    def makeCar
+        @carsmade.push(Car.new)
+    end
+
+    attr_accessor :carsmade
+end
+
+Mazda = Factory.new("Mazda")
+Mazda.makeCar
+Mazda.makeCar
+Mazda.makeCar
+puts Mazda.carsmade
+
+# Singleton Method - class there is only meant to be one of
+
+class AlexMerced
+    @@name = "Rae Hebron"
+    @@age = 28
+
+    def AlexMerced.age 
+        @@age
+    end
+
+    def AlexMerced.name
+        @@name
+    end
+end
+
+puts AlexMerced.age
+puts AlexMerced.name
