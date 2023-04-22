@@ -96,3 +96,12 @@ end
 
 theFunc
 
+# BINDING
+def anotherFunc
+    cheese = :gouda
+    hello = :provolone
+    binding
+end
+
+puts anotherFunc.eval('cheese') # grab the cheese variable that exists within local context
+puts anotherFunc.eval('hello')
