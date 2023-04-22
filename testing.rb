@@ -284,3 +284,39 @@ end
 
 puts AlexMerced.age
 puts AlexMerced.name
+
+## Composition / Modules
+
+module People
+    def speak
+        puts "say stuff"
+    end
+
+    def birthday
+        @age += 1
+    end
+end
+
+class Person
+    def initialize name, age
+        @name = name
+        @age = age
+    end
+include People
+
+    def haveBaby
+        puts "have a baby"
+    end
+end
+
+class Baby
+    def initialize name, age
+        @name = name
+        @age = age
+    end
+include People
+end
+
+Mary = Person.new("Mary", 30)
+puts Mary.age
+puts Mary.name
