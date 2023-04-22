@@ -105,3 +105,41 @@ end
 
 puts anotherFunc.eval('cheese') # grab the cheese variable that exists within local context
 puts anotherFunc.eval('hello')
+
+## OOP Masterclass
+
+class Dog
+    @@totalDogs = 0
+    def initialize(name)
+        @name = name
+        @legs = 4
+        @ears = 2
+        @tail = true
+        @@totalDogs += 1
+    end
+    def Dog.total
+        @@totalDogs
+    end
+    def legs
+        return @legs
+    end
+    def setLegs(value)
+        @legs = value
+    end
+    def name
+        return @name
+    end
+    def setName(name)
+        @name = name
+    end
+end
+
+Spot = Dog.new("Spot")
+Fluffy = Dog.new("Fluffy")
+Fluffy.setLegs(3)
+
+puts Spot.legs
+puts Fluffy.legs
+puts Spot.name
+puts Fluffy.name
+puts Dog.total
