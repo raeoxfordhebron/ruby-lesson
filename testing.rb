@@ -35,3 +35,25 @@ puts(my_arr[3])
 for num in my_arr do
     puts(num)
 end
+
+# Concatenation
+string1 = 'Hello'
+string2 = 'World'
+
+puts(string1 + ' ' + string2)
+
+# Interpolation
+puts("#{string1} #{string2}")
+
+# Methods
+def HelloWorld()
+    puts('Hello World')
+end
+
+HelloWorld()
+
+def GoodbyeWorld (x = 'Hello', y = 'World')
+    return "#{x} #{y}"
+end
+
+puts(GoodbyeWorld())
