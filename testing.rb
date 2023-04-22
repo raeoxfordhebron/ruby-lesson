@@ -62,3 +62,19 @@ puts(GoodbyeWorld('Goodbye', 'Rae'))
 my_hash = {"Name" => "Rae Hebron", "Age" => 28}
 puts(my_hash["Name"])
 puts(my_hash["Age"])
+
+# Functions in Ruby
+# BLOCK ( anonymous function )
+
+def myFunc
+    yield 5 # waiting for a block to be passed in
+    yield 4
+    yield 3
+end
+
+myFunc {|x| puts x}
+
+# LAMBDA
+myLambda = -> (x){x+2} # can only do one expression here
+
+puts myLambda.call(5) # call the function above after the arrow, 5 is the argument passing into the function
