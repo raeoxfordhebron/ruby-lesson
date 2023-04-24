@@ -1,3 +1,5 @@
+require './HelloWorld.rb'
+
 puts "Hello World" # console.log in javascript
 
 # Data Types
@@ -108,7 +110,19 @@ puts anotherFunc.eval('hello')
 
 ## OOP Masterclass
 
+# Module
+
+module Trained
+    def sit()
+        puts("Dog sits")
+    end
+    def rollover()
+        puts("Dog rolls over")
+    end
+end
+
 class Dog
+    include Trained
     @@totalDogs = 0 # class variable
     puts "this runs" 
     def initialize(name)
@@ -146,6 +160,10 @@ end
 Spot = Dog.new("Spot")
 Fluffy = SmallDog.new("Fluffy")
 Fluffy.setLegs(3)
+Spot.rollover()
+Fluffy.sit()
+
+HelloWorld()
 
 puts Spot.legs
 puts Fluffy.legs
@@ -324,3 +342,5 @@ puts Mary.name
 
 Lizzie = Baby.new("Lizzie", 0)
 Lizzie.speak
+
+
